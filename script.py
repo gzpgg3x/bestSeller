@@ -23,11 +23,12 @@ g = ""
 f = codecs.open('output.txt', 'w', encoding='utf-8')
 for story in articles["results"]:
     # f.write(story["title"] + "\n")
-    try:
-        # g = g + story["title"] + "\n"
-        g = g + story["list_name"] + "\n"
-    except:
-        g = g + " \n"
+    for book in story["book_details"]: 
+        try:
+            # g = g + story["title"] + "\n"
+            g = g + book["title"] + "\n"
+        except:
+            g = g + " \n"
 f.close()
 print g
 
