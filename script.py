@@ -23,6 +23,17 @@ g = ""
 f = codecs.open('output.txt', 'w', encoding='utf-8')
 for story in articles["results"]:
     # f.write(story["title"] + "\n")
+    b = 0
+    for book in story["isbns"]:
+        if b == 0: 
+            try:
+                # g = g + story["title"] + "\n"
+                g = g + book["isbn10"] + "\n"
+                b = b + 1
+            except:
+                g = g + " \n"
+        
+
     for book in story["book_details"]: 
         try:
             # g = g + story["title"] + "\n"
